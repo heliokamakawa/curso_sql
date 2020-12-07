@@ -1,0 +1,108 @@
+/** script do curso de banco de dados MySQL utilizando workbench**/
+
+/** caso exista, eliminando a base de dados AULA_BANCO
+DROP DATABASE IF EXISTS AULA_BANCO;
+
+/** criando a base de dados **/
+CREATE DATABASE AULA_BANCO;
+
+/** selecionando a base de dados **/
+USE AULA_BANCO;
+
+/** criando a tabela pessoa **/
+CREATE TABLE PESSOA(
+ID INT NOT NULL AUTO_INCREMENT
+,NOME VARCHAR(100) NOT NULL 
+,ATIVO CHAR(1) NOT NULL DEFAULT 'S'
+,CONSTRAINT PK_PESSOA PRIMARY KEY (ID)
+);
+
+/** inserindo pessoas **/
+INSERT INTO PESSOA (NOME) VALUES ('PAULA');
+INSERT INTO PESSOA (NOME) VALUES ('RAUL');
+INSERT INTO PESSOA (NOME,ATIVO) VALUES ('REGIANE','N');
+
+/** 
+exemplo de função deterministc 
+conforme parâmetro, o resultado sempre é o mesmo
+**/
+SELECT CONCAT(NOME, ' - ', ATIVO) FROM PESSOA;
+
+/** 
+exemplo de função não deterministc 
+funão de caucular idade, conforme o dia, mesmo que tenha o mesmo parâmetro gera resultado diferente
+**/
+SELECT NOW();
+
+/**
+***** sintaxe de uma função MySQL  ****
+DELIMITER //                            → troca do símbolo do delimitador que por padrão é ; - para diferenciar com o final do comando
+CREATE FUNCTION nome( [parâmetros] )    → cria função, os parâmetros são opcionais
+RETURNS {TIPO DE DADO}                  → definir o tipo de dados que a função irá retornar
+[NOT] DETERMINISTC                      → se a função será ou não DETERMINISTC
+BEGIN                                   → início do bloco de comando
+   DECLARE [variáveis];                 → declaração da variável
+   código...                            → nossa programação
+   RETURN ....;                         → o retorno do resultado
+END;                                    → fim do bloco de comando
+//                                      → fim da função                          
+DELIMITER ;                             → retornando o símbolo padrão do delimitador
+**/
+
+/** sintaxe para eliminar, caso exista, uma função **/
+DROP FUNCTION IF EXISTS OLA;
+
+/** exemplo da 1º função - sem parâmetro, sem variáveis, somente para entender a sintaxe **/
+DELIMITER //
+CREATE FUNCTION OLA() 
+RETURNS VARCHAR(150) DETERMINISTIC
+BEGIN
+	RETURN 'Olá Pessoal!';
+END;
+//
+DELIMITER ;
+
+
+
+DELIMITER //
+CREATE FUNCTION OLA(NOME VARCHAR(100), ATIVO CHAR(1), OPCAO INT) 
+RETURNS VARCHAR(150) DETERMINISTIC
+BEGIN
+	DECLARE FRASE VARCHAR(150);
+    
+    IF ATIVO = 'S' THEN 
+		BEGIN 
+			IF OPCAO = 1 THEN
+				BEGIN 
+					SET FRASE = CONCAT('BOM DIA ', NOME);
+                END;
+			ELSEIF OPCAO = 2 THEN 
+				BEGIN 
+					SET FRASE = CONCAT('BOA TARDE ', NOME);
+                END;
+			ELSEIF OPCAO = 3 THEN 
+				BEGIN 
+					SET FRASE = CONCAT('BOA NOITE ', NOME);
+                END;
+			ELSE 
+				BEGIN
+					SET FRASE = 'OPÇÃO ERRADO';
+                END;
+			END IF;
+        END;
+	ELSE
+		BEGIN 
+			SET FRASE = CONCAT(NOME, ' ESTÁ INATIVO(A).');
+        END;
+    END IF;
+
+	RETURN FRASE;
+END;
+//
+DELIMITER ;
+
+SELECT OLA('ROBERTA');
+
+SELECT NOME FROM PESSOA;
+
+SELECT OLA(NOME, ATIVO, 1) FROM PESSOA;
