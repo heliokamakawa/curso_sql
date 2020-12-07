@@ -1,13 +1,9 @@
 /** script do curso de banco de dados MySQL utilizando workbench**/
 
-/** caso exista, eliminando a base de dados AULA_BANCO
-DROP DATABASE IF EXISTS AULA_BANCO;
 
-/** criando a base de dados **/
-CREATE DATABASE AULA_BANCO;
-
-/** selecionando a base de dados **/
-USE AULA_BANCO;
+DROP DATABASE IF EXISTS AULA_BANCO;	/** caso exista, eliminando a base de dados AULA_BANCO
+CREATE DATABASE AULA_BANCO; 		/** criando a base de dados **/
+USE AULA_BANCO;				/** selecionando a base de dados **/
 
 /** criando a tabela pessoa **/
 CREATE TABLE PESSOA(
@@ -21,18 +17,6 @@ ID INT NOT NULL AUTO_INCREMENT
 INSERT INTO PESSOA (NOME) VALUES ('PAULA');
 INSERT INTO PESSOA (NOME) VALUES ('RAUL');
 INSERT INTO PESSOA (NOME,ATIVO) VALUES ('REGIANE','N');
-
-/** 
-exemplo de função deterministc 
-conforme parâmetro, o resultado sempre é o mesmo
-**/
-SELECT CONCAT(NOME, ' - ', ATIVO) FROM PESSOA;
-
-/** 
-exemplo de função não deterministc 
-funão de caucular idade, conforme o dia, mesmo que tenha o mesmo parâmetro gera resultado diferente
-**/
-SELECT NOW();
 
 /**
 ***** sintaxe de uma função MySQL  ****
@@ -49,6 +33,20 @@ END;                                    → fim do bloco de comando
 DELIMITER ;                             → retornando o símbolo padrão do delimitador
 **/
 
+
+/** 
+exemplo de função deterministc 
+conforme parâmetro, o resultado sempre é o mesmo
+**/
+SELECT CONCAT(NOME, ' - ', ATIVO) FROM PESSOA;
+
+/** 
+exemplo de função não deterministc 
+funão de caucular idade, conforme o dia, mesmo que tenha o mesmo parâmetro gera resultado diferente
+**/
+SELECT NOW();
+
+
 /** sintaxe para eliminar, caso exista, uma função **/
 DROP FUNCTION IF EXISTS OLA;
 
@@ -63,7 +61,96 @@ END;
 DELIMITER ;
 
 
+SELECT OLA(); /** TESTANDO A FUNÇÃO **/
 
+
+/** eliminando a função para fazer o 2º exemplo **/
+DROP FUNCTION IF EXISTS OLA;
+
+/** exemplo da 2º função - definindo parâmetro **/
+DELIMITER //
+CREATE FUNCTION OLA(NOME VARCHAR(100)) 
+RETURNS VARCHAR(150) DETERMINISTIC
+BEGIN
+	RETURN CONCAT('Olá ', NOME);
+END;
+//
+DELIMITER ;
+
+
+SELECT OLA('ROBERTA'); /** TESTANDO A FUNÇÃO**/
+SELECT OLA(NOME) FROM PESSOA; /** TESTE FUNÇÃO NA CONSULTA**/
+SELECT OLA(NOME) FROM PESSOA WHERE ID = 1; /** TESTE FUNÇÃO NA CONSUTLA COM FILTRO**/
+
+
+/** eliminando a função para fazer o 3º exemplo **/
+DROP FUNCTION IF EXISTS OLA;
+
+/** exemplo da 3º função - definindo VARIÁVEL **/
+DELIMITER //
+CREATE FUNCTION OLA(NOME VARCHAR(100)) 
+RETURNS VARCHAR(150) DETERMINISTIC
+BEGIN
+	DECLARE FRASE VARCHAR(150);
+	SET FRASE = CONCAT('Olá ', NOME);
+	RETURN FRASE;
+END;
+//
+DELIMITER ;
+
+SELECT OLA(NOME) FROM PESSOA; /** TESTE FUNÇÃO NA CONSULTA**/
+
+/** eliminando a função para fazer o 4º exemplo **/
+DROP FUNCTION IF EXISTS OLA;
+
+/** exemplo da 4º função - ESTRUTURA DE DECISÃO **/
+DELIMITER //
+CREATE FUNCTION OLA( NOME VARCHAR(100), ATIVO CHAR(1) ) 
+RETURNS VARCHAR(150) DETERMINISTIC
+BEGIN
+	DECLARE FRASE VARCHAR(150);
+	IF ATIVO = 'S' THEN
+		BEGIN
+			SET FRASE = CONCAT('Olá ', NOME);
+		END;
+	END IF;
+	RETURN FRASE;
+END;
+//
+DELIMITER ;
+
+SELECT OLA(NOME, ATIVO) FROM PESSOA; /** TESTE FUNÇÃO NA CONSULTA**/
+
+
+/** eliminando a função para fazer o 5º exemplo **/
+DROP FUNCTION IF EXISTS OLA;
+
+/** exemplo da 5º função - ELSE **/
+DELIMITER //
+CREATE FUNCTION OLA( NOME VARCHAR(100), ATIVO CHAR(1) ) 
+RETURNS VARCHAR(150) DETERMINISTIC
+BEGIN
+	DECLARE FRASE VARCHAR(150);
+	IF ATIVO = 'S' THEN
+		BEGIN
+			SET FRASE = CONCAT('Olá ', NOME);
+		END;
+	ELSE
+		BEGIN
+			SET FRASE = CONCAT(NOME, 'ESTÁ INATIVO(A)');
+		END;
+	END IF;
+	RETURN FRASE;
+END;
+//
+DELIMITER ;
+
+SELECT OLA(NOME,ATIVO) FROM PESSOA; /** TESTE FUNÇÃO NA CONSULTA**/
+
+/** eliminando a função para fazer o 6º exemplo **/
+DROP FUNCTION IF EXISTS OLA;
+
+/** exemplo da 6º função - IF ANINHADO - ELSEIF **/
 DELIMITER //
 CREATE FUNCTION OLA(NOME VARCHAR(100), ATIVO CHAR(1), OPCAO INT) 
 RETURNS VARCHAR(150) DETERMINISTIC
@@ -101,8 +188,4 @@ END;
 //
 DELIMITER ;
 
-SELECT OLA('ROBERTA');
-
-SELECT NOME FROM PESSOA;
-
-SELECT OLA(NOME, ATIVO, 1) FROM PESSOA;
+SELECT OLA(NOME, ATIVO, 1) FROM PESSOA; /** TESTE FUNÇÃO NA CONSULTA**/
