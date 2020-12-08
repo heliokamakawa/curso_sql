@@ -56,158 +56,58 @@ SELECT * FROM ESTADO;
 /** consutla cidade **/
 SELECT * FROM CIDADE;
 
+/** SELECT SIGLA FROM ESTADO WHERE ID = ??**/
+
 /** CRIANDO FUNÇÃO QUE TEM COMO PARÂMETRO, O CÓDIGO DO ESTADO E RETORNA A SIGLA DO ESTADO **/
 DELIMITER //
-CREATE FUNCTION BUSCAR_SIGLA(ID_ESTADO INT)
+CREATE FUNCTION buscar_sigla_estado(id_estado INT)
 RETURNS CHAR(2) DETERMINISTIC 
 BEGIN 
-	DECLARE S CHAR(2);
-    SELECT SIGLA INTO S FROM ESTADO WHERE ID = ID_ESTADO;
-	RETURN S;
+	DECLARE resultado CHAR(2);
+    SELECT sigla INTO resultado FROM estado WHERE id = id_estado;
+    RETURN resultado;
 END;
 //
 DELIMITER ;
 
-SELECT C.NOME 'CIDADE', C.ESTADO_ID 'ESTADO' FROM CIDADE C;
-SELECT C.NOME 'CIDADE', BUSCAR_SIGLA(C.ESTADO_ID) 'ESTADO' FROM CIDADE C;
+SELECT buscar_sigla_estado(3);
+SELECT nome,estado_id FROM cidade WHERE id = 1;
+SELECT nome, buscar_sigla_estado(estado_id) FROM cidade WHERE id = 1;
 
-/** estrutura de repetição **/
+SELECT nome,estado_id FROM cidade;
+
+
+SELECT nome, buscar_sigla_estado(estado_id) FROM cidade;
+
+SELECT c.nome, e.sigla
+FROM estado e, cidade c
+WHERE e.id = c.estado_id;
+
+SELECT COUNT(id) FROM cidade WHERE estado_id = 2;
+
+/** função que conta cidades de ume estado **/
 DELIMITER //
-CREATE FUNCTION imprimirAte100()
-RETURNS VARCHAR(1000) DETERMINISTIC
+CREATE FUNCTION contar_cidade(id_estado INT)
+RETURNS INT DETERMINISTIC 
 BEGIN
-	DECLARE numero INT;
-    DECLARE saida VARCHAR(1000);
-    
-    SET numero = 0;
-
-	meuLoop: LOOP
-		SET saida = CONCAT(saida, numero);
-		SET numero = numero + 1;
-	END LOOP meuLoop;
-
-RETURN saida;
-END
+	DECLARE resultado INT;
+    SELECT COUNT(id) INTO resultado FROM cidade WHERE estado_id = id_estado;
+    RETURN resultado;
+END;
 //
 DELIMITER ;
 
-SELECT imprimirAte100(5);  						/** testando **/
+SELECT contar_cidade(2);
+SELECT nome, id FROM estado WHERE id = 1;
+SELECT nome 'Estado', contar_cidade(id) 'Quantidade de Cidades' FROM estado WHERE id = 1;
 
 
-/** fatorial versão 1 **/
-DELIMITER //
-CREATE FUNCTION calcularFatorial(numero INT)
-RETURNS INT deterministic
-BEGIN
-	DECLARE fatorial INT;
-	SET fatorial = numero ;
+SELECT nome, id FROM estado;
+SELECT nome 'Estado', contar_cidade(id) 'Quantidade de Cidades' FROM estado;
 
-	meuLoop: LOOP
-		SET numero = numero - 1 ;
-		SET fatorial = fatorial * numero ;
-	END LOOP meuLoop;
-
-RETURN fatorial;
-END
-//
-delimiter ;
-
-SELECT calcularFatorial(5);  /** testando com 5 - funciona **/
-SELECT calcularFatorial(0);  /** testando com 0 - não funciona **/
-
-DROP FUNCTION IF EXISTS calcularFatorial; /** eliminando a função **/
-
-/** fatorial versão 2 - corrigindo o bug do 0 **/
-DELIMITER //
-CREATE FUNCTION calcularFatorial(numero INT)
-RETURNS INT deterministic
-BEGIN
-	DECLARE fatorial INT;
-	SET fatorial = numero ;
-    
-	IF numero <= 0 THEN
-		RETURN 1;
-	END IF;
-
-	meuLoop: LOOP
-		SET numero = numero - 1 ;
-		SET fatorial = fatorial * numero ;
-	END LOOP meuLoop;
-
-RETURN fatorial;
-END
-//
-delimiter ;
-
-
-SELECT calcularFatorial(7);  	/** testando - funciona **/
-SELECT calcularFatorial(0);  	/** testando com 0 - funciona **/
-SELECT calcularFatorial(1);  	/** testando com 1 - não funciona **/
-
-DROP FUNCTION IF EXISTS FATORIAL;
-DELIMITER //
-CREATE FUNCTION fatorial(numero INT)
-RETURNS INT deterministic
-BEGIN
-	DECLARE fatorial INT;
-	SET fatorial = numero ;
-
-	IF numero <= 0 THEN
-		RETURN 1;
-	END IF;
-
-	meuLoop: LOOP
-		SET numero = numero - 1 ;
-		IF numero<1 THEN
-			LEAVE meuLoop;
-		END IF;
-		SET fatorial = fatorial * numero ;
-	END LOOP meuLoop;
-
-	RETURN fatorial;
-END
-//
-delimiter ;
-
-SELECT calcularFatorial(10);  	/** testando - funciona **/
-SELECT calcularFatorial(0);  	/** testando com 0 - funciona **/
-SELECT calcularFatorial(1);  	/** testando com 1 - funciona **/
-
-/**
-devemos evitar de criar funções para facilitar a consulta... pois afetará o desempenho ...
-caso seja um consulta complexa, dependendo, é muito melhor que se crie a view... 
-**/
-
-/**
-*********** NÃO DEVEMOS CRIAR FUNÇÕES *********** 
-simplificando...
-(1) Para Consulta → neste caso, utilize o select mesmo 
-(2) Para Consulta Complexa → conforme o contexto, é melhor criar uma view do que fazer uma função.
-(3) Definir regras simples → utilize regras existentes: not null, unique e principalmente check - então não reivente a roda 
-EXEMPLO: validação do status - tem que ser, somente A ou I → utilize CHECK
-(4) Gerar um campo de resultado de outras colunas → utilize colunas virtuais
-(5) Definir ações necessárias na inserção e alteração de registros → papel de trigger/gatilhos que vamos estudar ainda...
-(6) Definir funções que já existem, como datas, calcular idade, manipulação de caracteres → mais uma vez não reivente a roda
-o mysql possui uma vasta gama de funções nativas... assim, antes de criar verifique se já possui 
-
-Então quando devemos criar funções? 
-(1) Para fazer uma ação específica do projeto
-(2) Para modularizar, centralizar um código, evitando repetição e facilitando a manutenção...
-pois, caso precise, basta alterar a função, impactando todos os códigos que utilizam a função...
-exemplo: validação de cpf
-**/
-
-
-
-
-
-
-
-
-
-
-
-
-
+SELECT e.nome, COUNT(c.id)
+FROM estado e, cidade c
+WHERE e.id = c.estado_id
+GROUP BY e.id;
 
 
