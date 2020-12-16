@@ -69,7 +69,7 @@ id INT PRIMARY KEY
 
 
 INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (1,'PARANÁ','PR','S','2020-12-15');	-- inserindo registro na tabela estado
-INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (1,'PARANÁ','PR','S','2020-12-15');	-- consultado a tabela estado
+SELECT id, nome, sigla, ativo, data_cadastro FROM estado;											-- consultado a tabela estado
 INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (2,'PARANÁ','PR','S','2020-12-15');	-- da forma que criamos ele aceita estados com nomes e siglas iguais
 INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (3,NULL,NULL,'S','2020-12-15'); 		-- da forma que criamos ele aceita dados nulos
 INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (4,'SÃO PAULO','SP',8,'2020-12-15');	-- da forma que criamos ele aceita valores sem sentido para a coluna "ativo"
@@ -106,9 +106,11 @@ CHECK (ativo IN ('S', 'N') )  	→ fora da linha da definição da coluna defini
 
 -- inserindo registro na tabela estado
 INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (1,'PARANÁ','PR','S','2020-12-15');
+/** teste de erro - para testar, é só tirar do comentário
 INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (2,'PARANÁ','PR','S','2020-12-15'); 	-- testando estamos com nomes iguais → agora gera erro, pois estado e sigla é UNIQUE 
 INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (3,NULL,NULL,'S','2020-12-15');		-- testando a inserção de dado nulos → agora gera erro, pois definimos que os campos são obrigatórios (NOT NULL)
 INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (4,'SÃO PAULO','SP',8,'2020-12-15');	-- testando inserção de valores errados na coluna ativo - agora gera erro, ativo deve ser 'S' ou 'N"
+**/
 
 -- eliminando tabela para definir regras/CONSTRAINTS nomeadas
 DROP TABLE IF EXISTS estado;
@@ -133,8 +135,9 @@ id INT NOT NULL
 ,CONSTRAINT coluna_ativo_deve_ser_S_ou_N CHECK (ativo IN ('S', 'N') )  -- deinimos um nome para a constraint CHECK (ativo IN ('S', 'N') )
 );
 
+/** teste de erro - para testar, é só tirar do comentário
 INSERT INTO estado (id,nome,sigla,ativo,data_cadastro) VALUES (4,'SÃO PAULO','SP',8,'2020-12-15');	-- agora, o log mostra o nome da regra
-
+**/
 
 
 DROP TABLE IF EXISTS estado; -- eliminando tabela para facilitar inserções de dados
@@ -156,10 +159,6 @@ id INT NOT NULL AUTO_INCREMENT
 
 /**
 agora id é auto incremento, ativo tem valor padrão 'S', e data_cadastro tem o valor padrão CURRENT_TIMESTAMP (uma varíavel do MySQL que pega a data e hora no momento do cadastro)
-**/
-
-
-/** 
 não precisamos mais informar id, ativo e data_cadasro 
 ficando muito mais fácil e seguro, pois agora a data e hora é fornecido pelo sistema
 **/
@@ -175,9 +174,3 @@ espero que você tenha entendido!!! o segredo é praticar!!!
 Bom estudo!!! Até a próxima aula
 link da videoaula: https://www.youtube.com/watch?v=yS6wtk55ZDs
 **/
-
-
-
-
-
-
