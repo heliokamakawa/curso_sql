@@ -1,3 +1,8 @@
+/**
+Aula create tabel com FOREIGN KEY
+Link da aula: https://www.youtube.com/watch?v=ytYPwaU-vRM
+**/
+
 DROP DATABASE IF EXISTS aula_banco; -- eliminado aula_banco
 CREATE DATABASE aula_banco; 		-- criando aula_banco
 USE aula_banco; 					-- selecionando aula_banco 
@@ -64,7 +69,12 @@ INSERT INTO cidade (nome,estado_id) VALUES ('CURITIBA', 1);
 -- consulta tabela cidade
 SELECT * FROM CIDADE;
 
-
+/**
+Entendendo estes comandos já é possível fazer o script inteiro do nosso estudo de caso!
+Se puderam, façam! A prática é a alma da aprendizagem.
+                                                
+Até a próxima aula!!!
+**/
 
 
 
