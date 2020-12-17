@@ -25,6 +25,36 @@ INSERT INTO estado (nome,sigla) VALUES ('SÃO PAULO','SP');
 -- consultando a tabela estado
 SELECT * FROM estado;
 /**
+O que é PK? 
+Primary Key, em português, Chave Primária
+Seria o identificador do registro 
+Quando realizamos a inscrição de um evento ou show, no ato da inscrição é definido o CÓDIGO IDENTIFICADOR da inscrição para te identificar
+Quando matriculamos em um curso, no ato da matrícula, é definido o  CÓDIGO IDENTIFICADOR da matrícula para te identificar 
+Mesmo que você tenha nome ou um documento identificador como o CPF, ainda assim, é definido um  CÓDIGO IDENTIFICADOR para facilicar o processo 
+Porque não se utiliza o nome? → Porquê pode ter 2 nomes iguais.
+Porque não se utiliza o CPF? → Porquê não temos controle nele, é um documento gerenciado pela Secretaria da Receita Federal do Brasil.
+A PK seria justamente o  CÓDIGO IDENTIFICADOR para identificar o registro.
+Em um banco de dados relacional, toda tabela tem que ter a PK, o CÓDIGO IDENTIFICADOR do registro.
+Como é o identificado, ela é NOT NULL e UNIQUE.
+
+O que é FK? 
+Foreign Key, em português, Chave Estrangeira
+Para evitar a repetição de dados, realizamos a normalização do BD, defindo especificamente o que cada tabela irá armazenar.
+Porém, com a separação, quebra-se o víncule de algumas informações. Por exemplo: Cidade e Estado.
+A serpação evita a repetição de ddos do Estado na Cidade, porém, a Cidade fica sem referência de qual Estado ela pertence.
+A FK seria uma coluna de "vinculação", indicando a referência de um registro de outra tabela.
+No exemplo da Cidade e Estado, a tabela Cidade teria a FK, a coluna de referência da tabela Estado, de modo que possa-se saber de qual Estado a Cidade pertence.
+Um FK pode ser definida como NULL ou NOT NULL e sempre referencia uma PK. 
+
+COMO DEFINIR PK
+>>>>>>>>>>DEFININDO PK sem definir o nome da regra
+id INT PRIMARY KEY
+
+>>>>>>>>>>DEFININDO PK e definindo o nome da regra
+CONSTRAINT nome_regra PRIMARY KEY (coluna_pk) 
+
+
+
 COMO DEFINIR FK
 >>>>>>>>>>DEFININDO FK sem definir o nome da regra
 FOREIGN KEY (estado_id) REFERENCES estado (id) 
