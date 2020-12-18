@@ -1,5 +1,6 @@
 /*
 CURSO DE BANCO DE DADOS MySQL COM WORKBENCH - AULA 03 - Modificando tabelas
+Link videoaula: https://www.youtube.com/watch?v=fyQKM1--Kpc
 
 */
 
@@ -134,6 +135,9 @@ Comandos que defininem a estrutura
 DML - Date Manipulation Language - Linguagem de Manipulação de Dados 
 Comandos que manipulam os dados 
 → INSERT/UPDATE/DELETE/SELECT 
+                                                
+Bom estudo!!!
+Link da videoaula: https://www.youtube.com/watch?v=fyQKM1--Kpc
 **/
 
 
