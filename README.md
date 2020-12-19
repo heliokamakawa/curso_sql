@@ -14,7 +14,7 @@ aula de SQL com o Banco de Dados MySQL com Workbench
 → Definindo valor padrão (DEFAULT) <br>
 → Auto incremento (AUTO_INCREMENT)<br>
 
-<iframe width="1195" height="672" src="https://www.youtube.com/embed/yS6wtk55ZDs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a href="https://youtu.be/yS6wtk55ZDs">Videoaula</a>
 
 <b>Aula 02</b>
 → Create Table com Foreign Key 
