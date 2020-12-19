@@ -1,7 +1,7 @@
 # curso_sql
 aula de SQL com o Banco de Dados MySQL com Workbench
 
-<b>aula 01 - Linguagem de Definição de Dados - DDL (Data definition language) </b><br>
+<a href="https://youtu.be/yS6wtk55ZDs"><b>aula 01 - Linguagem de Definição de Dados - DDL (Data definition language) </b></a><br>
 → Definindo comentários de bloco e de linha <br>
 → Criando e eliminando (Create e Drop) Database/base de dados<br>
 → Entenda IF EXISTS <br>
@@ -13,8 +13,6 @@ aula de SQL com o Banco de Dados MySQL com Workbench
 → VARCHAR, CHAR, INT, DATETIME - Diferença varchar e char<br>
 → Definindo valor padrão (DEFAULT) <br>
 → Auto incremento (AUTO_INCREMENT)<br>
-
-<a href="https://youtu.be/yS6wtk55ZDs">Videoaula</a>
 
 <b>Aula 02</b>
 → Create Table com Foreign Key 
