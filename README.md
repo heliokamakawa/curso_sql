@@ -47,18 +47,19 @@ aula de SQL com o Banco de Dados MySQL com Workbench
 → Subquery na cláusula FROM<br>
 → Subquery na cláusula WHERE<br>
 
-<b>Aula 13 - Criando, alterando e excluindo View</b>
+<a href="https://studio.youtube.com/video/dJJQ1fLM-Fw/edit"><b>Criando, alterando e excluindo View</b></b></a><br>
 
-<b>Aula 14 - Colunas Virtuais</b>
 
-<b>Aula 15 - Funções definidas pelo usuário (UDF) </b>
+<a href="https://studio.youtube.com/video/1CGgmZ_OuIs/edit"><b>Aula 14 - Colunas Virtuais</b></a><br>
 
-<b>Aula 16 - Definindo funções com instruções SQL</b>
+<a href="https://studio.youtube.com/video/VQQCF7il5ME/edit"><b>Aula 15 - Funções definidas pelo usuário (UDF)</b></a><br>
 
-<b>Aula 17 - Estrutura de Repetição (WHILE, REPEAT, LOOP)</b>
+<a href="https://studio.youtube.com/video/t9y6aSbo0pE/edit"><b>Aula 16 - Definindo funções com instruções SQL</b></a><br>
 
-<b>Aula 18 - Criando Procedimentos </b>
+<a href="https://studio.youtube.com/video/GiXTRQXuqT0/edit"><b>Aula 17 - Estrutura de Repetição (WHILE, REPEAT, LOOP)</b></a><br>
 
-<b>Aula 19 - Criando Procedure com controle de transação/tratamento de erros</b>
+<a href="https://studio.youtube.com/video/Q57ljBbx50I/edit"><b>Aula 18 - Criando Procedimentos</b></a><br>
 
-<b>Aula 20 - Criando Triggers</b>
+<a href="https://studio.youtube.com/video/Fn6W7_EraHg/edit"><b>Aula 19 - Criando Procedure com controle de transação/tratamento de erros</b></a><br>
+
+<a href="https://studio.youtube.com/video/0dMso14rUhM/edit"><b>Aula 20 - Criando Triggers</b></a><br>
