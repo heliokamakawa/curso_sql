@@ -47,7 +47,7 @@ aula de SQL com o Banco de Dados MySQL com Workbench
 → Subquery na cláusula FROM<br>
 → Subquery na cláusula WHERE<br>
 
-<a href="https://studio.youtube.com/video/dJJQ1fLM-Fw/edit"><b>Criando, alterando e excluindo View</b></b></a><br>
+<a href="https://studio.youtube.com/video/dJJQ1fLM-Fw/edit"><b>aULA 13 - Criando, alterando e excluindo View</b></b></a><br>
 
 
 <a href="https://studio.youtube.com/video/1CGgmZ_OuIs/edit"><b>Aula 14 - Colunas Virtuais</b></a><br>
