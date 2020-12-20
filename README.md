@@ -28,66 +28,66 @@ aula de SQL com o Banco de Dados MySQL com Workbench
 → padronizando nomes composto<br>
 → padronizando comandos <br>
 
-<a href="https://studio.youtube.com/video/bJdZCmvpAsM/edit"><b>Aula 09 - Junções a esquerda/direita LEFT/RIGHT FULL JOIN</b></a><br>
+<a href="https://www.youtube.com/watch?v=bJdZCmvpAsM"><b>Aula 09 - Junções a esquerda/direita LEFT/RIGHT FULL JOIN</b></a><br>
 → junções, junções a esquerda, junções a direita, exemplos<br>
 
-<a href="https://studio.youtube.com/video/AxPu8oNLdH4/edit"><b>Aula 10 - Uso de funções em consulta</b></a><br>
+<a href="https://www.youtube.com/watch?v=AxPu8oNLdH4"><b>Aula 10 - Uso de funções em consulta</b></a><br>
 → Conceitos e definições<br>
 → Prática, Operadores, Controle de Fluxo<br>
 → Conjunto, Arrendondamento, Datas<br>
 
-<a href="https://studio.youtube.com/video/wT93RAvO8EI/edit"><b>Aula 11 - Grou By</b></a><br>
+<a href="https://www.youtube.com/watch?v=wT93RAvO8EI"><b>Aula 11 - Grou By</b></a><br>
 → Junções<br>
 → Group By<br>
 → Exemplos Práticos<br>
 
-<a href="https://studio.youtube.com/video/0tInRNEXqEU/edit"><b>Aula 12 - Subquery - Consultas aninhadas</b></a><br>
+<a href="https://www.youtube.com/watch?v=0tInRNEXqEU"><b>Aula 12 - Subquery - Consultas aninhadas</b></a><br>
 → Introdução<br>
 → Subquery, Exemplos<br>
 → Subquery na cláusula FROM<br>
 → Subquery na cláusula WHERE<br>
 
-<a href="https://studio.youtube.com/video/dJJQ1fLM-Fw/edit"><b>aULA 13 - Criando, alterando e excluindo View</b></b></a><br>
+<a href="https://www.youtube.com/watch?v=dJJQ1fLM-Fw"><b>aULA 13 - Criando, alterando e excluindo View</b></b></a><br>
 → Importância de criar uma VIEW<br>
 → Sintaxe para crar uma VIEW<br>
 → Criando VIEW com JOIN, GROUP BY, HAVING, INNER JOIN<br>
 → SELECT, UPDATE, DELETE e INSERT em VIEW<br>
 
-<a href="https://studio.youtube.com/video/1CGgmZ_OuIs/edit"><b>Aula 14 - Colunas Virtuais</b></a><br>
+<a href="https://www.youtube.com/watch?v=1CGgmZ_OuIs"><b>Aula 14 - Colunas Virtuais</b></a><br>
 → Conceitos e sintaxe<br>
 → Columa virtual e armazenada<br>
 → Diferença, vantagens e desvantagens<br>
 
-<a href="https://studio.youtube.com/video/VQQCF7il5ME/edit"><b>Aula 15 - Funções definidas pelo usuário (UDF)</b></a><br>
+<a href="https://www.youtube.com/watch?v=VQQCF7il5ME"><b>Aula 15 - Funções definidas pelo usuário (UDF)</b></a><br>
 → Sintaxe básica de uma função/function: definindo parâmetro e retorno (CREATE FUNTION)<br>
 → Diferença deterministic e não deterministic<br>
 → Estrutura de Decisão IF/ELSEIF/ELSE/END IF/Bloco de comandos<br>
 
-<a href="https://studio.youtube.com/video/t9y6aSbo0pE/edit"><b>Aula 16 - Definindo funções com instruções SQL</b></a><br>
+<a href="https://www.youtube.com/watch?v=t9y6aSbo0pE"><b>Aula 16 - Definindo funções com instruções SQL</b></a><br>
 → Criando funções/ create function - sintaxe<br>
 → Definido consulta/select na criação de uma função (SELECT INTO)<br>
 → Como retornar uma coluna de uma consulta/tabela em uma função<br>
 
-<a href="https://studio.youtube.com/video/GiXTRQXuqT0/edit"><b>Aula 17 - Estrutura de Repetição (WHILE, REPEAT, LOOP)</b></a><br>
+<a href="https://www.youtube.com/watch?v=GiXTRQXuqT0"><b>Aula 17 - Estrutura de Repetição (WHILE, REPEAT, LOOP)</b></a><br>
 → Sintaxe While, Loop e Repeat <br>
 → Fatorial com While <br>
 → Definindo a estrutura de repetição em função de Banco de Dados<br>
 → Eliminando funções<br>
 
-<a href="https://studio.youtube.com/video/Q57ljBbx50I/edit"><b>Aula 18 - Criando Procedimentos</b></a><br>
+<a href="https://www.youtube.com/watch?v=Q57ljBbx50I"><b>Aula 18 - Criando Procedimentos</b></a><br>
 → CREATE e DROP PROCEDURE <br>
 → CALL PROCEDURE (chamando procedure) <br>
 → Variáveis do Usuário (variáveis de sessão) <br>
 → Parâmetros IN, OUT e INOUT (parâmetros de saída e entrada) <br>
 
-<a href="https://studio.youtube.com/video/Fn6W7_EraHg/edit"><b>Aula 19 - Criando Procedure com controle de transação/tratamento de erros</b></a><br>
+<a href="https://www.youtube.com/watch?v=Fn6W7_EraHg"><b>Aula 19 - Criando Procedure com controle de transação/tratamento de erros</b></a><br>
 → Criando, eliminando Procedure;<br>
 → Declare Handler, call procedure, SET var;<br>
 → Tratamento de erros gerais e específicos (NOT NULL, UNIQUE);<br>
 → Procedure com INSERT;<br><br>
 → Como fazer uma procedure com tratamento de erros.
 
-<a href="https://studio.youtube.com/video/0dMso14rUhM/edit"><b>Aula 20 - Criando Triggers</b></a><br>
+<a href="https://www.youtube.com/watch?v=0dMso14rUhM"><b>Aula 20 - Criando Triggers</b></a><br>
 → CREATE/DROP TRIGGER<br>
 → Sintaxe para criar uma Trigger <br>
 → Definições/Configurações da Trigger<br>
