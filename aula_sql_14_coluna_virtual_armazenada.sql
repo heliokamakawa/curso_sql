@@ -1,5 +1,5 @@
 /*
-Aula 16 - Coluna gerada - virtual/armazenada
+Aula 14 - Coluna gerada - virtual/armazenada
 Link videoaula → https://www.youtube.com/watch?v=1CGgmZ_OuIs
 */
 
