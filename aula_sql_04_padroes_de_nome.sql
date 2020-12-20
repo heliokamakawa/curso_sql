@@ -29,9 +29,9 @@ Minhas sugestões: respeitar padrões/regras do ambiente... caso não exista:
 utilize as palavras chaves reservadas em MySQL com letras maiúsculas, assim, ficarão em destaque, facilitando a visualicação
 diferenciando os comandos com as outras coisas
 **/
-DROP DATABASE IF EXISTS aula_banco; -- eliminado aula_banco 
+DROP DATABASE IF EXISTS aula_banco; 	-- eliminado aula_banco 
 CREATE DATABASE aula_banco; 		-- criando aula_banco
-USE aula_banco; 					-- selecionando aula_banco 
+USE aula_banco; 			-- selecionando aula_banco 
 
 
 /*
