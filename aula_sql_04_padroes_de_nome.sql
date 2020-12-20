@@ -21,12 +21,27 @@ Minhas sugestões: respeitar padrões/regras do ambiente... caso não exista:
 	(4) nome colunas sem o nome de tabela
 	(5) definir constraints nomeadas de PK, FK e regras específicas do projeto 
 	(6) valores de inserções em letras maiúsculas
-    (7) não colocar o nome da tabela em atributos... (específica minha)
+    	(7) não colocar o nome da tabela em atributos... (específica minha)
 */
 
+/**
+>>>  (1) comandos em letras maiúsculas <<<
+utilize as palavras chaves reservadas em MySQL com letras maiúsculas, assim, ficarão em destaque, facilitando a visualicação
+diferenciando os comandos com as outras coisas
+**/
 DROP DATABASE IF EXISTS aula_banco; -- eliminado aula_banco 
 CREATE DATABASE aula_banco; 		-- criando aula_banco
 USE aula_banco; 					-- selecionando aula_banco 
+
+
+/*
+>>> (2) nome (database, tabela, colunas, regras) de elementos que definimos em letras minúsculas <<
+Porque em letras minúsculas?
+(1) diferenciar dos comandos, nos quais, definimos em letras maiúsculas
+(2) grande parte da comunidade do BD adotam este padrão 
+(3) Em configuração padrão, o MySQL pode se comportar de maneira diferente para cada sistema operacional, assim, padronizado, evitamos problemas
+→ um dos problemas está relacionado ao lower case table names... segue a explicação abaixo.
+*/
 
 SELECT @@version, @@version_compile_os, @@lower_case_table_names; 
 /**
@@ -36,17 +51,21 @@ SELECT @@version, @@version_compile_os, @@lower_case_table_names;
 
 no windows → lower_case_table_names é 1 (verdadeiro)
 no linux → lower_case_table_names é 0 (falso)
-**/
 
-/*
-com lower_case_table_names 1, independente de você colocar maiúscula ou minúscula, será criado a tabela com o nome com letras minúsculas
-com lower_case_table_names 0, será criado a tabela conforme definido no script
+com lower_case_table_names 1
+→ independente de você colocar maiúscula ou minúscula, será criado a tabela com o nome com letras minúsculas
+→ case sensitive off para o uso do nome de tabelas em comandos 
+
+com lower_case_table_names 0
+→ será criado a tabela conforme definido no script
+→ case sentitive on para uso do nome de tabelas em comandos
 */
 
-CREATE TABLE EsTaDo( -- criando a tabela sem padronizar 
+-- criando a tabela sem padronizar 
+CREATE TABLE EsTaDo(
 /*
-no windows esta tabela ficará "estado"
-no linux esta tabela ficará "EsTaDo"
+no windows esta tabela ficará "estado" (lower_case_table_names 1)
+no linux esta tabela ficará "EsTaDo" (lower_case_table_names 0)
 */
 id INT NOT NULL AUTO_INCREMENT
 ,nome VARCHAR(200) NOT NULL UNIQUE  
@@ -63,7 +82,7 @@ SELECT * FROM ESTADO; -- windows → funciona   linux → dá erro
 SELECT * FROM Estado; -- windows → funciona   linux → dá erro
 SELECT * FROM EsTaDo; -- windows → funciona   linux → funciona
 
-DROP TABLE EsTaDo; -- eliminando a tabela para criar com padrão
+DROP TABLE EsTaDo; -- eliminando a tabela para criar com padrão. Qual padrão? letras minúsculas para a definição do nome na criação da tabela e também na cosulta
 
 CREATE TABLE estado( -- criando a tabela sem padronizar 
 /*
@@ -78,19 +97,18 @@ id INT NOT NULL AUTO_INCREMENT
 ,CONSTRAINT pk_estado PRIMARY KEY (id)  
 );
 
--- adotando o padrão de usar minúscula irá funcionar independente do SO ou configuração
-INSERT INTO estado (nome,sigla) VALUES ('SÃO PAULO','SP'); -- windows → funciona   linux → funciona
-SELECT * FROM estado; -- windows → funciona   linux → funciona
+-- adotando o padrão de usar letras minúscula irá funcionar independente do SO ou configuração
+INSERT INTO estado (nome,sigla) VALUES ('SÃO PAULO','SP'); 	-- windows → funciona   linux → funciona
+SELECT * FROM estado; 						-- windows → funciona   linux → funciona
 
 
 /**
-Em nomes compostos é importante adotar alguma forma de destacar cada nome 
-em programação é comum utilziar o padrão Camel Case 
-Exemplo: categoriaProduto 
-Só que no banco de dados, com lower_case_table_names 1, independente de utilizar letras maiúculas ou minúsculas 
-a tabela será criada com letras minúsculas, ficando "categoriaproduto"
-
-É por isto que adotamos o "-" para separar os nomes → "categoria_produto"
+>>> (3) nome composto → tudo em minúscula separados por "_"
+Em nomes compostos é importante adotar alguma forma de destacar cada nome, destacando cada nome do nome composto
+em programação é comum utilziar o padrão Camel Case. Exemplo: categoriaProduto (a 1º letra de cada nome em maiúscula)
+Só que no banco de dados, com lower_case_table_names 1, independente de utilizar letras maiúculas ou minúsculas no script
+a tabela será criada com letras minúsculas, ficando "categoriaproduto", e deste jeito, dificulta a leitura
+É por isto que adotamos o "_" para separar os nomes em BD → "categoria_produto" → Desta forma fica padronizado para qualquer SO, independente da configuração
 **/
 CREATE TABLE categoria_produto( 
 id INT AUTO_INCREMENT 
@@ -103,6 +121,7 @@ id INT AUTO_INCREMENT
 
 
 
+-- >>> (4) nome colunas sem o nome de tabela
 DROP TABLE estado; -- eliminando a tabela 
 
 -- muitas pessoas gostam de colocar o nome da tabela nas colunas
@@ -117,9 +136,9 @@ id_estado INT NOT NULL AUTO_INCREMENT
 -- colocando nome da tabela na coluna, quando realizamos uma consulta, a descrição da coluna fica bem clara!!!
 
 SELECT nome_estado FROM estado; -- olhem o nome da coluna.. só de olhar sabemos que é da tabela estado...
--- SELECT nome FROM estado; → esta consulta seria sem colocar o nome da tabela na coluna, desta forma não dá pra saber direito de qual tabela a coluna é
--- porém, pelo menos para mim, é redundante... tudo que está dentro do estado são colunas do estado.. não é preciso colocar para saber disto
--- assim, a minha sugestão é que não coloque
+-- SELECT nome FROM estado; → esta consulta seria sem colocar o nome da tabela na coluna, desta forma não fica tão claro!!!
+-- porém, pelo menos para mim, colocar o nome da tabela na coluna é redundante... as colunas são do estado.. não é preciso colocar o nome da tabela na coluna para saber disto
+-- assim, a minha sugestão é que NÃO coloque
 
 DROP TABLE estado; -- eliminando a tabela 
 
@@ -132,9 +151,27 @@ id INT NOT NULL AUTO_INCREMENT
 ,CONSTRAINT pk_estado PRIMARY KEY (id)  
 );
 
--- e pra deixar a coluna clara podemos inserir o nome da tabela na consulta
+-- e pra deixar a coluna clara basta inserir o nome da tabela na consulta
 SELECT estado.nome FROM estado; -- fica claro da mesma forma, sem ser redundante
 
+/*
+(5) definir constraints nomeadas de PK, FK e regras específicas do projeto 
+Definir regras nomeadas facilita a administração em banco de dados, porém, consome recurso. 
+Assim, a minha sugetão é que defina-se nomes em regras importantes como PK, FK e regras específcias do projeto
+*/
 
+-- criando tabela cidade
+CREATE TABLE cidade (
+id INT NOT NULL AUTO_INCREMENT
+,nome VARCHAR(200)  NOT NULL
+,ativo ENUM('S','N') NOT NULL DEFAULT 'S' 
+,data_cadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+,estado_id INT NOT NULL 
+,CONSTRAINT pk_cidade PRIMARY KEY (id)						-- definindo nome da regra PK
+,CONSTRAINT fk_cidade_estado FOREIGN KEY (estado_id) REFERENCES estado (id)	-- definindo nome da regra PK
+,CONSTRAINT cidade_unica UNIQUE(nome, estado_id)				-- definindo nome da regra PK
+);
+
+-- >>> (6) valores de inserções em letras maiúsculas <<<
 INSERT INTO estado (nome,sigla) VALUES ('PARANÁ','PR'); -- defina um padrão para os dados na inserção
-SELECT * FROM estado WHERE nome = 'PARANÁ'; -- assim na consulta, saberá como escrever o filtro
+SELECT * FROM estado WHERE nome = 'PARANÁ'; 		-- assim na consulta, saberá como escrever o filtro sem precisar usar funções para padronizar
