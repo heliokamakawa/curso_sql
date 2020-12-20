@@ -48,7 +48,10 @@ aula de SQL com o Banco de Dados MySQL com Workbench
 → Subquery na cláusula WHERE<br>
 
 <a href="https://studio.youtube.com/video/dJJQ1fLM-Fw/edit"><b>aULA 13 - Criando, alterando e excluindo View</b></b></a><br>
-
+→ Importância de criar uma VIEW<br>
+→ Sintaxe para crar uma VIEW<br>
+→ Criando VIEW com JOIN, GROUP BY, HAVING, INNER JOIN<br>
+→ SELECT, UPDATE, DELETE e INSERT em VIEW<br>
 
 <a href="https://studio.youtube.com/video/1CGgmZ_OuIs/edit"><b>Aula 14 - Colunas Virtuais</b></a><br>
 
