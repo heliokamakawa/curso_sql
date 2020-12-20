@@ -14,25 +14,38 @@ aula de SQL com o Banco de Dados MySQL com Workbench
 → Definindo valor padrão (DEFAULT) <br>
 → Auto incremento (AUTO_INCREMENT)<br>
 
-<b>Aula 02</b>
-→ Create Table com Foreign Key 
-→ O que é e para que serve PK - Primary Key - Chave Primária
-→ O que é e para que serve FK - Foreign Key - Chave Estrangeira
-→ Como criar tabelas com FK - Foreign Key - Chave Estrangeira
+<a href="https://www.youtube.com/watch?v=ytYPwaU-vRM"><b>aula 02 - Criando tabelas com PK/FK </b></a><br>
+→ Create Table com Foreign Key <br>
+→ O que é e para que serve PK - Primary Key - Chave Primária<br>
+→ O que é e para que serve FK - Foreign Key - Chave Estrangeira<br>
+→ Como criar tabelas com FK - Foreign Key - Chave Estrangeira<br>
 
-<b>Aula 03 - Padronizando nome</b>
-→ padronizando nome de tabelas, atibutos, regras
-→ padronizando nomes composto
-→ padronizando comandos 
+<a href="https://www.youtube.com/watch?v=fyQKM1--Kpc"><b>aula 03 - Alterando Estrutura de uma Tabela </b></a><br>
+→ ALTER TABLE ADD, MODIFY, DROP e RENAME<br>
 
-<b>Aula 09 - Junções a esquerda/direita LEFT/RIGHT FULL JOIN</b>
-→ junções, junções a esquerda, junções a direita, exemplos
+<a href="https://www.youtube.com/watch?v=QENpBj3pHp0"><b>aula 04 - Padrões de Nomenclatura </b></a><br>
+→ padronizando nome de tabelas, atibutos, regras<br>
+→ padronizando nomes composto<br>
+→ padronizando comandos <br>
 
-<b>Aula 10 - Uso de funções em consulta </b>
+<a href="https://studio.youtube.com/video/bJdZCmvpAsM/edit"><b>Aula 09 - Junções a esquerda/direita LEFT/RIGHT FULL JOIN</b></a><br>
+→ junções, junções a esquerda, junções a direita, exemplos<br>
 
-<b>Aula 11 - Grou By</b>
+<a href="https://studio.youtube.com/video/AxPu8oNLdH4/edit"><b>Aula 10 - Uso de funções em consulta</b></a><br>
+→ Conceitos e definições<br>
+→ Prática, Operadores, Controle de Fluxo<br>
+→ Conjunto, Arrendondamento, Datas<br>
 
-<b>Aula 12 - Subquery - Consultas aninhadas</b>
+<a href="https://studio.youtube.com/video/wT93RAvO8EI/edit"><b>Aula 11 - Grou By</b></a><br>
+→ Junções<br>
+→ Group By<br>
+→ Exemplos Práticos<br>
+
+<a href="https://studio.youtube.com/video/0tInRNEXqEU/edit"><b>Aula 12 - Subquery - Consultas aninhadas</b></a><br>
+→ Introdução<br>
+→ Subquery, Exemplos<br>
+→ Subquery na cláusula FROM<br>
+→ Subquery na cláusula WHERE<br>
 
 <b>Aula 13 - Criando, alterando e excluindo View</b>
 
