@@ -1,6 +1,6 @@
 /*
 Aula 6 - Date Manipulation Language (DML) - Linuguagem de Manipulação de Dados
-Link videoaula → https://www.youtube.com/watch?v=9rxD_Tt-DwY&list=PLg5-aZqPjMmAWcUgpc7qP0Vk8N7aMrbY9&index=6
+Link videoaula → https://www.youtube.com/watch?v=9rxD_Tt-DwY
 */
 
 DROP DATABASE IF EXISTS aula_banco; -- se existir elimine aula_banco
