@@ -1,6 +1,6 @@
 /*
 Aula 5 - Date Manipulation Language (DML) - Linuguagem de Manipulação de Dados
-Link videoaula → 
+Link videoaula → https://youtu.be/eyx3Yk2iEBg
 */
 
 DROP DATABASE IF EXISTS aula_banco; -- se existir elimine aula_banco
@@ -55,6 +55,13 @@ INSERT INTO cidade (nome, estado_id) VALUES ('SALVADOR',15);-- gera erro pq esta
 */
 SELECT * FROM estado;
 SELECT * FROM cidade;
+
+/*
+É muito importante que você defina um BD com restrições de modo que possa manter a integridade dos dados.
+
+E por hj é só!!! Até a próxima aula!
+
+*/
 
 
 
