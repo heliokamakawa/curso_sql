@@ -1,6 +1,6 @@
 /*
 Aula 6 - Date Manipulation Language (DML) - Linuguagem de Manipulação de Dados
-Link videoaula → 
+Link videoaula → https://www.youtube.com/watch?v=9rxD_Tt-DwY&list=PLg5-aZqPjMmAWcUgpc7qP0Vk8N7aMrbY9&index=6
 */
 
 DROP DATABASE IF EXISTS aula_banco; -- se existir elimine aula_banco
@@ -113,6 +113,9 @@ DELETE FROM cidade;
 SELECT * FROM estado;
 SELECT * FROM cidade;
 
+/*
+BONS ESTUDOS!!!
+*/
 
 
 
