@@ -29,11 +29,11 @@ aula de SQL com o Banco de Dados MySQL com Workbench
 → padronizando comandos <br>
 
 <a href="https://www.youtube.com/watch?v=eyx3Yk2iEBg"><b>aula 05 - Inserindo registros!!! </b></a><br>
-→ Sintaxe completa
-→ Valores padrões - DEFAULT 
-→ Definindo colunas específicas
-→ Inserindo registros em tabelas com chave estrangeira/FK 
-→ Exemplo prático
+→ Sintaxe completa<br>
+→ Valores padrões - DEFAULT <br>
+→ Definindo colunas específicas<br>
+→ Inserindo registros em tabelas com chave estrangeira/FK <br>
+→ Exemplo prático<br>
 
 <a href="https://www.youtube.com/watch?v=bJdZCmvpAsM"><b>Aula 09 - Junções a esquerda/direita LEFT/RIGHT FULL JOIN</b></a><br>
 → junções, junções a esquerda, junções a direita, exemplos<br>
