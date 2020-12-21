@@ -35,6 +35,16 @@ aula de SQL com o Banco de Dados MySQL com Workbench
 → Inserindo registros em tabelas com chave estrangeira/FK <br>
 → Exemplo prático<br>
 
+<a href="https://www.youtube.com/watch?v=9rxD_Tt-DwY"><b>aula 06 - UPDATE e DELETE </b></a><br>
+→ Alterando uma coluna de um único registro<br>
+→ Alterando mais de uma coluna de um único registro<br>
+→ Alterando com CURRENT_TIMESTAMP <br>
+→ Use DEFAULT para alteração <br>
+→ Tome os cuidados necessários para alterar somente um único registro<br>
+→ Excluindo um único registro <br>
+→ Excluindo um conjunto de registros <br>
+→ Excluindo todos os registros<br>
+
 <a href="https://www.youtube.com/watch?v=bJdZCmvpAsM"><b>Aula 09 - Junções a esquerda/direita LEFT/RIGHT FULL JOIN</b></a><br>
 → junções, junções a esquerda, junções a direita, exemplos<br>
 
