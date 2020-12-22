@@ -1,6 +1,6 @@
 /*
 Aula 7 - SELECT
-Link videoaula → https://www.youtube.com/watch?v=ZjE9pY_ML6Q&list=PLg5-aZqPjMmAWcUgpc7qP0Vk8N7aMrbY9&index=7
+Link videoaula → https://www.youtube.com/watch?v=ZjE9pY_ML6Q
 */
 
 DROP DATABASE IF EXISTS aula_banco; -- se existir elimine aula_banco
