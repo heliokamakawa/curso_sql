@@ -45,6 +45,15 @@ aula de SQL com o Banco de Dados MySQL com Workbench
 → Excluindo um conjunto de registros <br>
 → Excluindo todos os registros<br>
 
+<a href="https://www.youtube.com/watch?v=ZjE9pY_ML6Q"><b>aula 07 - CONSULTAS </b></a><br>
+→ Sintaxe básica<br>
+→ Especificando colunas<br><br>
+→ Determinando filtros com WHERE <br>
+→ Operadores relacionais (=, maior, menor, diferente, maior =, menor =)<br>
+→ Operadores lógicos AND e OR<br>
+→ BETWEEN e IN <br>
+→ Determinando mais de uma condição com diversas colunas<br>
+
 <a href="https://www.youtube.com/watch?v=bJdZCmvpAsM"><b>Aula 09 - Junções a esquerda/direita LEFT/RIGHT FULL JOIN</b></a><br>
 → junções, junções a esquerda, junções a direita, exemplos<br>
 
