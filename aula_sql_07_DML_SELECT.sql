@@ -1,6 +1,6 @@
 /*
-Aula 6 - Date Manipulation Language (DML) - Linuguagem de Manipulação de Dados
-Link videoaula → 
+Aula 7 - SELECT
+Link videoaula → https://www.youtube.com/watch?v=ZjE9pY_ML6Q&list=PLg5-aZqPjMmAWcUgpc7qP0Vk8N7aMrbY9&index=7
 */
 
 DROP DATABASE IF EXISTS aula_banco; -- se existir elimine aula_banco
@@ -227,6 +227,11 @@ FROM
 WHERE 
 	YEAR(data_cadastro) BETWEEN 2015 AND 2019
 	AND ativo = 'N';
+	
+	
+/*
+Fim!!! Bons estudos!!!
+*/
     
 
 
