@@ -30,9 +30,9 @@ id INT NOT NULL AUTO_INCREMENT
 );
 
 -- inserindo estados
-INSERT INTO estado (id,nome, sigla, ativo, data_cadastro) VALUES (1,'SÃO PAULO','SP','S','2015-10-31');
-INSERT INTO estado (id,nome, sigla, ativo, data_cadastro) VALUES (2,'PARANÁ','PR','S','2015-2-25');
-INSERT INTO estado (id,nome, sigla, ativo, data_cadastro) VALUES (3,'MATO GROSSO','MT','N','2015-12-02');
+INSERT INTO estado (nome, sigla, ativo, data_cadastro) VALUES ('SÃO PAULO','SP','S','2015-10-31');
+INSERT INTO estado (nome, sigla, ativo, data_cadastro) VALUES ('PARANÁ','PR','S','2015-2-25');
+INSERT INTO estado (nome, sigla, ativo, data_cadastro) VALUES ('MATO GROSSO','MT','N','2015-12-02');
 
 -- inserindo cidades
 INSERT INTO cidade (nome, estado_id) VALUES ('BAURU',1);
