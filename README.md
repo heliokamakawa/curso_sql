@@ -47,12 +47,18 @@ aula de SQL com o Banco de Dados MySQL com Workbench
 
 <a href="https://www.youtube.com/watch?v=ZjE9pY_ML6Q"><b>aula 07 - CONSULTAS </b></a><br>
 → Sintaxe básica<br>
-→ Especificando colunas<br><br>
+→ Especificando colunas<br>
 → Determinando filtros com WHERE <br>
 → Operadores relacionais (=, maior, menor, diferente, maior =, menor =)<br>
 → Operadores lógicos AND e OR<br>
 → BETWEEN e IN <br>
 → Determinando mais de uma condição com diversas colunas<br>
+
+<a href="https://www.youtube.com/watch?v=wm3e7rICW2I"><b>aula 08 - JOIN </b></a><br>
+→ Padrão SQL 89/92<br>
+→ SELECT - como definir colunas de várias tabelas<br>
+→ O que é junções de tabelas - produto cartesiano <br>
+→ Como definir a condição correta para junções/JOIN<br>
 
 <a href="https://www.youtube.com/watch?v=bJdZCmvpAsM"><b>Aula 09 - Junções a esquerda/direita LEFT/RIGHT FULL JOIN</b></a><br>
 → junções, junções a esquerda, junções a direita, exemplos<br>
