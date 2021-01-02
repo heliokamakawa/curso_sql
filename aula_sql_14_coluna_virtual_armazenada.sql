@@ -57,7 +57,7 @@ UPDATE produto SET nome='SUCO DE MARACUJÁ' WHERE id = 2; -- usuário altera o n
 SELECT nome,nome_completo FROM produto;
 /*
 Na consulta reparem dois erros:
-	(1) - 1º registro tem um erro de digitação 
+    (1) - 1º registro tem um erro de digitação 
     (2) - 2º registro tem 2 nomes... SUCO DE MARCUJÁ em nome e SUCO DE LARANJA em nome completo
     
 Quando criamos uma coluna que depende/resultad de outras colunas, desnormalizamos a tabela (especificamente a 3º Forma Normal) 
