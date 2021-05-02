@@ -79,35 +79,37 @@ SELECT * FROM estado; -- mostra TODAS as colunas e TODOS os registros de estado
 SINTAXE DE UM SELECT especificando colunas
 
 SELECT 
-	{nome_coluna1}
+    {nome_coluna1}
     ,{nome_coluna2}
-    , [... outroas colunas]
+    , [... outras colunas]
 FROM 
 	nome_tabela;
 */
 SELECT nome,sigla FROM estado; -- somente as colunas nome e sigla serão apresentadas
 
 /*
-SINTAXE DE UM SELECT determiando um filtro de quais registros serão apresentados
+SINTAXE DE UM SELECT determinando um filtro de quais registros serão apresentados
 
 SELECT 
-	{nome_coluna1}
+    {nome_coluna1}
     ,{nome_coluna2}
-    , [... outroas colunas]
+    , [... outras colunas]
 FROM 
-	nome_tabela
+    {nome_tabela}
 WHERE 
-	condição1 
-    AND/OR condição2
-    AND/OR condição3
+    coluna {=, <>, >, <, outros} condição 
+    AND/OR coluna {=, <>, >, <, outros} condição
+    AND/OR coluna {=, <>, >, <, outros} condição
     [...]
-    AND/OR condiçãoN;
+    AND/OR AND/OR coluna {=, <>, >, <, outros} condição;
+
 */
-SELECT nome,sigla FROM estado WHERE id = 1;
 
-SELECT nome,sigla FROM estado WHERE nome = 'PARANÁ';
+SELECT * FROM estado WHERE id = 1; -- mostra os dados do estado que possui id igual a 1
 
--- descrevendo nome da tabela na coluna
+SELECT nome,sigla FROM estado WHERE nome = 'PARANÁ'; -- mostra nome e sigla do estado que possui o nome igual a PARANÁ
+
+-- Explicitando nome da tabela na coluna (apesar do trabalho extra, é uma boa prática, visto que, melhora a legibilidade do comando)
 SELECT 
 	estado.nome 
     ,estado.sigla 
@@ -117,9 +119,9 @@ FROM
 WHERE 
 	estado.id = 1;
     
--- definindo apelido para tabela
+-- Definindo apelido (alias) para tabela (muito utilizado em consultas que envolvem muitas tabelas)
 SELECT 
-	e.nome 
+    e.nome 
     ,e.sigla 
     ,e.data_cadastro 
 FROM 	
@@ -127,7 +129,7 @@ FROM
 WHERE 
 	e.id = 1;
     
--- definindo apelidos para colunas
+-- Renomeando nome de colunas no resultado (muito útil quando a consulta retorna colunas com nomes iguais ou que possuem nomes que não são compreensíveis).
 SELECT 
 	e.nome 'NOME ESTADO'
     ,e.sigla 'SIGLA ESTADO'
@@ -138,6 +140,7 @@ WHERE
 	e.id = 1;
     
     
+-- Usando funções de biblioteca na cláusula WHERE
 -- consultando estados cadastrados em 2020
 SELECT 
 	nome 'NOME ESTADO'
@@ -148,7 +151,7 @@ FROM
 WHERE 
 	YEAR(data_cadastro) = 2020;
     
-    
+-- Usando o operador relacional “diferente” (!= ou <>)
 -- consultando estados que não foram cadastrados em 2020
 SELECT 
 	nome 'NOME ESTADO'
@@ -159,7 +162,7 @@ FROM
 WHERE 
 	YEAR(data_cadastro) != 2020; -- pode ser YEAR(data_cadastro) != 2020;
  
- 
+-- Consultas com o operador lógico “ou” (OR)
 -- consultando estados que foram cadastrados em 2016 OU 2020
 SELECT 
 	nome 'NOME ESTADO'
@@ -171,6 +174,7 @@ WHERE
 	YEAR(data_cadastro) = 2016 
 	OR YEAR(data_cadastro) = 2020;
     
+-- Consultas com 3 condições na cláusula WHERE
 -- consultando estados que foram cadastrados em 2015, 2017 OU 2020
 SELECT 
 	nome 'NOME ESTADO'
@@ -183,7 +187,7 @@ WHERE
 	OR YEAR(data_cadastro) = 2017
 	OR YEAR(data_cadastro) = 2020;
     
--- ou podemos utilizar o IN   
+-- Consultas com o uso da função IN na cláusula WHERE   
 SELECT 
 	nome, sigla, data_cadastro 
 FROM 
