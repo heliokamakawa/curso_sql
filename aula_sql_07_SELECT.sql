@@ -70,7 +70,7 @@ INSERT INTO cidade (nome, estado_id) VALUES ('ITAJAÍ',4);
 /*
 SINTAXE DE UM SELECT 
 → SELECT * FROM nome_tabela;
-→ "*" indica que todas as colunas serão apresentadas no resutlado
+→ "*" indica que todas as colunas serão apresentadas no resultado
 */
 SELECT * FROM estado; -- mostra TODAS as colunas e TODOS os registros de estado
 
