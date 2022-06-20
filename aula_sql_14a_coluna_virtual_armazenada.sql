@@ -27,7 +27,7 @@ SELECT CONCAT(nome, ' - ', descricao) FROM produto;
 -- se sempre precisa do nome completo, que tal criar a coluna nome completo?
 DROP TABLE produto; -- eliminando a tabela 
 
--- cirando tabela produto com nome completo
+-- criando tabela produto com nome completo
 CREATE TABLE produto(
 id INT NOT NULL auto_increment
 ,nome VARCHAR(100) NOT NULL 
