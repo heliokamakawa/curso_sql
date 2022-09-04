@@ -23,10 +23,12 @@ Considere as relações abaixo:
 
 De acordo com as tabelas acima, responda:
 01) Quais entidades não respeitam a 3ºFN? Justifique. 
-02) Dentre as entidades que não respeitam a 3º FN, em quais podemos tratar utilizando a coluna virtual? Justique.
-03) Escolha 3 tabelas e trate a 3ºFN utilizando colunas virtuais não armazenada.
-04) Escolha 3 tabelas e trate a 3ºFN utilizando colunas virtuais armazenada. 
-05) Qual as desvantagens da coluna virtual e virtual armazenada?
-06) Qual as vantagens da coluna virtual e virtual armazenada?
+02) Dentre as entidades que não respeitam a 3º FN, em quais podemos tratar utilizando a coluna gerada? Justique.
+03) Escolha 3 tabelas e trate a 3ºFN utilizando colunas geradas virtuais.
+04) Escolha 3 tabelas e trate a 3ºFN utilizando colunas geradas armazenadas. 
+05) Quais as diferenças entre as colunas geradas virtuais e as colunas geradas armazenadas?
+06) Em que caso devemos utilizar as colunas geradas virtuais? Justifique.
+07) Em que caso devemos utilizar as colunas geradas armazenadas? Justifique.
+08) Entre a coluna gerada virtual e a armazenada, qual possui o melhor desempenho? Justifique.
 */
 
