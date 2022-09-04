@@ -23,7 +23,7 @@ Considere as relações abaixo:
 
 De acordo com as tabelas acima, responda:
 01) Quais entidades não respeitam a 3ºFN? Justifique. 
-02) Dentre as entidades que não respeitam a 3º FN, em quais podemos tratar utilizando a coluna gerada? Justique.
+02) Dentre as entidades que não respeitam a 3º FN, em quais podemos tratar utilizando a coluna gerada? Justifique.
 03) Escolha 3 tabelas e trate a 3ºFN utilizando colunas geradas virtuais.
 04) Escolha 3 tabelas e trate a 3ºFN utilizando colunas geradas armazenadas. 
 05) Quais as diferenças entre as colunas geradas virtuais e as colunas geradas armazenadas?
